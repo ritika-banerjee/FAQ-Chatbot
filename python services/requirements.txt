@@ -1,0 +1,11 @@
+fastapi 
+uvicorn 
+sentence-transformers 
+google-generativeai 
+PyPDF2 
+python-multipart 
+pydantic 
+python-dotenv 
+requests
+pinecone-client
+httpx

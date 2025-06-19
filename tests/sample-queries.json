@@ -1,0 +1,23 @@
+[
+  {"query": "What are the symptoms of dengue?"},
+  {"query": "How can I treat a common cold at home?"},
+  {"query": "When should I see a doctor for a headache?"},
+  {"query": "What are the side effects of paracetamol?"},
+  {"query": "Can I take ibuprofen on an empty stomach?"},
+  {"query": "What’s the normal blood pressure range?"},
+  {"query": "How often should I get a health check-up?"},
+  {"query": "Is it safe to take antibiotics for a sore throat?"},
+  {"query": "What should I eat during a fever?"},
+  {"query": "How do I know if I’m dehydrated?"},
+  {"query": "What are the early signs of diabetes?"},
+  {"query": "Can allergies cause a cough?"},
+  {"query": "What is the recommended vaccine schedule for adults?"},
+  {"query": "What are some home remedies for indigestion?"},
+  {"query": "How can I improve my sleep naturally?"},
+  {"query": "What are the symptoms of vitamin D deficiency?"},
+  {"query": "Is it safe to exercise when I have a cold?"},
+  {"query": "Can stress cause stomach pain?"},
+  {"query": "How do I manage high cholesterol without medication?"},
+  {"query": "What should I do if I have chest pain?"}
+]
+
