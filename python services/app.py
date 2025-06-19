@@ -33,25 +33,28 @@ class ResponseBody(BaseModel):
 @app.post("/user-query")
 async def send_query(request: Query):
     n8n_webhook_url = os.getenv("LINK")
-    payload = {"query" : request.query}
+    payload = {"query": request.query}
+
     if n8n_webhook_url is None:
         raise HTTPException(status_code=500, detail="n8n webhook URL not set in environment variables")
-    
+
     async with httpx.AsyncClient() as client:
         try:
             response = await client.post(n8n_webhook_url, json=payload)
             response.raise_for_status()
+            n8n_response = response.json()
         except httpx.HTTPError as e:
             raise HTTPException(status_code=500, detail=f"Error calling n8n webhook: {str(e)}")
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Error decoding n8n response: {str(e)}")
 
     return {
-        "status": "sent to n8n",
         "query": request.query,
-        "n8n_response_status": response.status_code
+        "answer": n8n_response.get("answer", "No answer returned from n8n.")
     }
 
-# receive the output from the llm   
-@app.post("/receive")
-def receive_data(data: ResponseBody):
-    print(data.output)
-    return {"status": "received"}
+# # receive the output from the llm   
+# @app.post("/receive")
+# def receive_data(data: ResponseBody):
+#     print(data.output)
+#     return {"status": "received"}
